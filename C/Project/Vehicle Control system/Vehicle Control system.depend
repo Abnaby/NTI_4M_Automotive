@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1689587855 source:g:\courses\nti\nti 4m automotive\c\project\vehicle control system\main.c
+	<stdio.h>
+	<stdlib.h>
+	"VCS_interface.h"
+
+1689586328 g:\courses\nti\nti 4m automotive\c\project\vehicle control system\vcs_interface.h
+	<stdio.h>
+	<stdlib.h>
+
+1689586869 source:g:\courses\nti\nti 4m automotive\c\project\vehicle control system\vcs_program.c
+	"VCS_interface.h"
+	<stdio.h>
+	<stdlib.h>
+
