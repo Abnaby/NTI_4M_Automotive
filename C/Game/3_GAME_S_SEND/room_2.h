@@ -1,0 +1,6 @@
+#ifndef ROOM_2_H_INCLUDED
+#define ROOM_2_H_INCLUDED
+
+
+
+#endif // ROOM_2_H_INCLUDED

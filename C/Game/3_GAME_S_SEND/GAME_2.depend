@@ -1,0 +1,249 @@
+# depslib dependency file v1.0
+1601305954 source:c:\users\amit\desktop\game_2\corridor.c
+
+1601307538 source:c:\users\amit\desktop\game_2\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1601256465 source:c:\users\amit\desktop\game_2\room_1.c
+
+1601307987 source:c:\users\amit\desktop\game_2\tunnel.c
+
+1601246374 source:c:\users\amit\desktop\game_2\room_2.c
+
+1601308046 source:c:\users\amit\desktop\game_2\escape.c
+
+1601307553 source:c:\users\amit\desktop\game_2\garden.c
+
+1601305954 source:d:\c_course\z\game_2\corridor.c
+
+1601308046 source:d:\c_course\z\game_2\escape.c
+
+1601307553 source:d:\c_course\z\game_2\garden.c
+
+1601332699 source:d:\c_course\z\game_2\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1601256465 source:d:\c_course\z\game_2\room_1.c
+
+1601246374 source:d:\c_course\z\game_2\room_2.c
+
+1601307987 source:d:\c_course\z\game_2\tunnel.c
+
+1601305954 source:d:\c_course\real_life_examples\game_2\corridor.c
+
+1601756527 source:d:\c_course\real_life_examples\game_2\escape.c
+
+1601307553 source:d:\c_course\real_life_examples\game_2\garden.c
+
+1601332699 source:d:\c_course\real_life_examples\game_2\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1601256465 source:d:\c_course\real_life_examples\game_2\room_1.c
+
+1601246374 source:d:\c_course\real_life_examples\game_2\room_2.c
+
+1601307987 source:d:\c_course\real_life_examples\game_2\tunnel.c
+
+1601305954 source:d:\diploma\2_c_course\session_6\3_game_s_6\corridor.c
+
+1601756527 source:d:\diploma\2_c_course\session_6\3_game_s_6\escape.c
+
+1601307553 source:d:\diploma\2_c_course\session_6\3_game_s_6\garden.c
+
+1601332699 source:d:\diploma\2_c_course\session_6\3_game_s_6\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1601256465 source:d:\diploma\2_c_course\session_6\3_game_s_6\room_1.c
+
+1601246374 source:d:\diploma\2_c_course\session_6\3_game_s_6\room_2.c
+
+1601307987 source:d:\diploma\2_c_course\session_6\3_game_s_6\tunnel.c
+
+1601305954 source:d:\material\2_c_course\session_6\3_game_s_6\corridor.c
+
+1605185112 source:d:\material\2_c_course\session_6\3_game_s_6\escape.c
+
+1601307553 source:d:\material\2_c_course\session_6\3_game_s_6\garden.c
+
+1601256465 source:d:\material\2_c_course\session_6\3_game_s_6\room_1.c
+
+1601246374 source:d:\material\2_c_course\session_6\3_game_s_6\room_2.c
+
+1601307987 source:d:\material\2_c_course\session_6\3_game_s_6\tunnel.c
+
+1605185095 source:d:\material\2_c_course\session_6\3_game_s_6\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1609425025 source:d:\material\2_c_course\session_7\3_game_s_6\corridor.c
+	<stdio.h>
+	<stdlib.h>
+
+1609428449 source:d:\material\2_c_course\session_7\3_game_s_6\garden.c
+	<stdio.h>
+	<stdlib.h>
+	"escape.h"
+
+1609428193 source:d:\material\2_c_course\session_7\3_game_s_6\main.c
+	<stdio.h>
+	<stdlib.h>
+	"corridor.h"
+	"escape.h"
+	"garden.h"
+	"room_1.h"
+	"tunnel.h"
+
+1609422947 source:d:\material\2_c_course\session_7\3_game_s_6\room_1.c
+	<stdio.h>
+	<stdlib.h>
+
+1601246374 source:d:\material\2_c_course\session_7\3_game_s_6\room_2.c
+
+1609425892 source:d:\material\2_c_course\session_7\3_game_s_6\escape.c
+	<stdio.h>
+	<stdlib.h>
+
+1609425444 source:d:\material\2_c_course\session_7\3_game_s_6\tunnel.c
+	<stdio.h>
+	<stdlib.h>
+
+1609427955 d:\material\2_c_course\session_7\3_game_s_6\escape.h
+
+1601257892 d:\material\2_c_course\session_7\3_game_s_6\corridor.h
+
+1609423986 d:\material\2_c_course\session_7\3_game_s_6\garden.h
+
+1601246515 d:\material\2_c_course\session_7\3_game_s_6\room_1.h
+
+1609428217 d:\material\2_c_course\session_7\3_game_s_6\tunnel.h
+
+1609425025 source:d:\material\2_c_course\session_7\3_game_s_send\corridor.c
+	<stdio.h>
+	<stdlib.h>
+
+1609428449 source:d:\material\2_c_course\session_7\3_game_s_send\garden.c
+	<stdio.h>
+	<stdlib.h>
+	"escape.h"
+
+1609427955 d:\material\2_c_course\session_7\3_game_s_send\escape.h
+
+1609428193 source:d:\material\2_c_course\session_7\3_game_s_send\main.c
+	<stdio.h>
+	<stdlib.h>
+	"corridor.h"
+	"escape.h"
+	"garden.h"
+	"room_1.h"
+	"tunnel.h"
+
+1601257892 d:\material\2_c_course\session_7\3_game_s_send\corridor.h
+
+1609423986 d:\material\2_c_course\session_7\3_game_s_send\garden.h
+
+1601246515 d:\material\2_c_course\session_7\3_game_s_send\room_1.h
+
+1609428217 d:\material\2_c_course\session_7\3_game_s_send\tunnel.h
+
+1609422947 source:d:\material\2_c_course\session_7\3_game_s_send\room_1.c
+	<stdio.h>
+	<stdlib.h>
+
+1601246374 source:d:\material\2_c_course\session_7\3_game_s_send\room_2.c
+
+1609425444 source:d:\material\2_c_course\session_7\3_game_s_send\tunnel.c
+	<stdio.h>
+	<stdlib.h>
+
+1609528069 source:d:\material\2_c_course\session_7\3_game_s_send\escape.c
+	<stdio.h>
+	<stdlib.h>
+
+1609425025 source:d:\e_s_diploma\2_c_course\s_6_string_algo\4_q_on_c\3_game_s_send\corridor.c
+	<stdio.h>
+	<stdlib.h>
+
+1641159836 source:d:\e_s_diploma\2_c_course\s_6_string_algo\4_q_on_c\3_game_s_send\escape.c
+	<stdio.h>
+	<stdlib.h>
+
+1609428449 source:d:\e_s_diploma\2_c_course\s_6_string_algo\4_q_on_c\3_game_s_send\garden.c
+	<stdio.h>
+	<stdlib.h>
+	"escape.h"
+
+1609427955 d:\e_s_diploma\2_c_course\s_6_string_algo\4_q_on_c\3_game_s_send\escape.h
+
+1609428193 source:d:\e_s_diploma\2_c_course\s_6_string_algo\4_q_on_c\3_game_s_send\main.c
+	<stdio.h>
+	<stdlib.h>
+	"corridor.h"
+	"escape.h"
+	"garden.h"
+	"room_1.h"
+	"tunnel.h"
+
+1601257892 d:\e_s_diploma\2_c_course\s_6_string_algo\4_q_on_c\3_game_s_send\corridor.h
+
+1609423986 d:\e_s_diploma\2_c_course\s_6_string_algo\4_q_on_c\3_game_s_send\garden.h
+
+1601246515 d:\e_s_diploma\2_c_course\s_6_string_algo\4_q_on_c\3_game_s_send\room_1.h
+
+1609428217 d:\e_s_diploma\2_c_course\s_6_string_algo\4_q_on_c\3_game_s_send\tunnel.h
+
+1609422947 source:d:\e_s_diploma\2_c_course\s_6_string_algo\4_q_on_c\3_game_s_send\room_1.c
+	<stdio.h>
+	<stdlib.h>
+
+1601246374 source:d:\e_s_diploma\2_c_course\s_6_string_algo\4_q_on_c\3_game_s_send\room_2.c
+
+1609425444 source:d:\e_s_diploma\2_c_course\s_6_string_algo\4_q_on_c\3_game_s_send\tunnel.c
+	<stdio.h>
+	<stdlib.h>
+
+1689595079 source:c:\users\abnaby\desktop\nti\3_game_s_send\corridor.c
+	<stdio.h>
+	<stdlib.h>
+
+1689596970 source:c:\users\abnaby\desktop\nti\3_game_s_send\escape.c
+	<stdio.h>
+	<stdlib.h>
+
+1689596576 source:c:\users\abnaby\desktop\nti\3_game_s_send\garden.c
+	<stdio.h>
+	<stdlib.h>
+	"escape.h"
+
+1609424355 c:\users\abnaby\desktop\nti\3_game_s_send\escape.h
+
+1689597072 source:c:\users\abnaby\desktop\nti\3_game_s_send\main.c
+	<stdio.h>
+	<stdlib.h>
+	"corridor.h"
+	"escape.h"
+	"garden.h"
+	"room_1.h"
+	"tunnel.h"
+
+1601254292 c:\users\abnaby\desktop\nti\3_game_s_send\corridor.h
+
+1609420386 c:\users\abnaby\desktop\nti\3_game_s_send\garden.h
+
+1601242915 c:\users\abnaby\desktop\nti\3_game_s_send\room_1.h
+
+1609424617 c:\users\abnaby\desktop\nti\3_game_s_send\tunnel.h
+
+1609419347 source:c:\users\abnaby\desktop\nti\3_game_s_send\room_1.c
+	<stdio.h>
+	<stdlib.h>
+
+1601242774 source:c:\users\abnaby\desktop\nti\3_game_s_send\room_2.c
+
+1609421844 source:c:\users\abnaby\desktop\nti\3_game_s_send\tunnel.c
+	<stdio.h>
+	<stdlib.h>
+
