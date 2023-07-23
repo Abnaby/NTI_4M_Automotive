@@ -39,7 +39,7 @@ int main(void)
 
 Result 
 
- ![Result]( ./Results/Way_2.JPG) 
+ ![Result]( ./Output/Output.JPG) 
 
 
  ## *Contributing*  
