@@ -247,3 +247,45 @@
 	<stdio.h>
 	<stdlib.h>
 
+1689595079 source:g:\courses\nti\nti 4m automotive\c\game\3_game_s_send\corridor.c
+	<stdio.h>
+	<stdlib.h>
+
+1689597493 source:g:\courses\nti\nti 4m automotive\c\game\3_game_s_send\escape.c
+	<stdio.h>
+	<stdlib.h>
+
+1689596576 source:g:\courses\nti\nti 4m automotive\c\game\3_game_s_send\garden.c
+	<stdio.h>
+	<stdlib.h>
+	"escape.h"
+
+1609424355 g:\courses\nti\nti 4m automotive\c\game\3_game_s_send\escape.h
+
+1689597072 source:g:\courses\nti\nti 4m automotive\c\game\3_game_s_send\main.c
+	<stdio.h>
+	<stdlib.h>
+	"corridor.h"
+	"escape.h"
+	"garden.h"
+	"room_1.h"
+	"tunnel.h"
+
+1601254292 g:\courses\nti\nti 4m automotive\c\game\3_game_s_send\corridor.h
+
+1609420386 g:\courses\nti\nti 4m automotive\c\game\3_game_s_send\garden.h
+
+1601242915 g:\courses\nti\nti 4m automotive\c\game\3_game_s_send\room_1.h
+
+1609424617 g:\courses\nti\nti 4m automotive\c\game\3_game_s_send\tunnel.h
+
+1609419347 source:g:\courses\nti\nti 4m automotive\c\game\3_game_s_send\room_1.c
+	<stdio.h>
+	<stdlib.h>
+
+1601242774 source:g:\courses\nti\nti 4m automotive\c\game\3_game_s_send\room_2.c
+
+1609421844 source:g:\courses\nti\nti 4m automotive\c\game\3_game_s_send\tunnel.c
+	<stdio.h>
+	<stdlib.h>
+
