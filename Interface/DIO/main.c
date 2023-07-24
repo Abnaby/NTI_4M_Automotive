@@ -25,7 +25,7 @@ int main(void)
 	 
     while (1) 
     {
-		// Externally Pulled Down
+		// Externally Pulled-Up
 		if(dio_dioLevelReadChannel(DIO_PORTA,DIO_PIN0) == STD_LOW)
 			dio_vidFlipChannel(DIO_PORTA,DIO_PIN2); 
 		// Every 10 ms
