@@ -128,3 +128,24 @@ void Global_Int(enable_disable copy_State )
 		// Todo Error
 	}
 }
+void EXT_Disable(interrupt_source copy_interruptNumber )
+{
+	switch(copy_interruptNumber)
+	{
+		case int0 :
+		/*		DISABLE INT0		*/
+		CLEAR_BIT(EXTINT_GICR,GICR_INT0);
+		break ;
+		case int1 :
+		/*		DISABLE INT1 	*/
+		CLEAR_BIT(EXTINT_GICR,GICR_INT1);
+		break ;
+		case int2 :
+		/*		DISABLE INT2		*/
+		CLEAR_BIT(EXTINT_GICR,GICR_INT2);
+		break;
+		default :
+		break ;
+
+	}
+}

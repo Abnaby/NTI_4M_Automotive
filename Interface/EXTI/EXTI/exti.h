@@ -14,7 +14,7 @@
 #include "exti_types.h"
 
 void EXT_Init(interrupt_source ,event_state );
-
+void EXT_Disable(interrupt_source copy_interruptNumber );
 void Global_Int( enable_disable );
 
 #endif  /* EXTI_H */

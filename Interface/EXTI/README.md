@@ -1,6 +1,25 @@
 # Interfacing - EXTI 
 
-## Q:  Write The EXTI Driver
+## Q:  Write The EXTI Driver 
+
+### ***Requirements***
+
+```
+Create a driver to implement external interrupts using the following functions declerations
+
+1- EXT_Init( interrupt_source , event_state );
+2- Global_Int( enable_disable );
+
+where
+
+enable_disable    : enable    or   disable
+interrupt_source  : int0      or   int1       or  int2
+event_state       : falling   or   rising     or  low    or   any_logic_change
+
+and I added a feature to disable the EXTI by calling the Function
+
+3- EXT_Disable(interrupt_source copy_interruptNumber )
+```
 
 ### Example 
 - Delays in ISR **Just** for testing.
@@ -14,7 +33,7 @@ u8 Global_Var ;
 void main(void)
 {
 	// GPIO Init 	
-	// PINA0 Input-Pull Up
+	// Set Interrupt Pins to PULL-UP
 	dio_vidConfigChannel(DIO_PORTD,DIO_PIN2,INPUT);
 	dio_vidConfigChannel(DIO_PORTD,DIO_PIN3,INPUT);
 	dio_vidConfigChannel(DIO_PORTB,DIO_PIN2,INPUT);
