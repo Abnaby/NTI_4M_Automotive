@@ -27,4 +27,8 @@
 
 #define LOCK_BTN							'1'	
 
+#define DOWN_BTN							'D'
+
+#define UP_BTN								'A'
+
 #endif /* PASSWORDLOCK_CFG_H_ */

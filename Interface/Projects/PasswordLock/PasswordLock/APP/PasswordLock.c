@@ -100,11 +100,14 @@ static u8 APP_ReadEEPROM(u16 uiAddress)
 	#endif 	
 	return LOC_u8ReturnValue ; 
 }
-static void APP_resetEEPROM(void)
+static void APP_FactoryReset(void)
 {
-	APP_WriteEEPROM(IS_FIRST_TIME_ADDRESS_EEPROM, 'm');
+	// Clear EEPROM 
+	APP_WriteEEPROM(IS_FIRST_TIME_ADDRESS_EEPROM, 0xFF);
+	// Soft Reset 
+	asm("jmp 0x0000");
 }
-static void APP_voidDisplayMainScreen(boolean copy_isLocked)
+static void APP_voidDisplayMainScreen(boolean copy_isLocked, u8 copy_u8PageNumber)
 {
 	lcd_vidClrDislay(); 
 	lcd_vidGotoRowColumn(0,0);	
@@ -121,23 +124,50 @@ static void APP_voidDisplayMainScreen(boolean copy_isLocked)
 		lcd_vidGotoRowColumn(0,19);	
 		lcd_vidDisplyChar(1);
 	}
-	lcd_vidGotoRowColumn(1,3);	
-	lcd_vidDisplyStr((u8*)"Select One of: ");
-	if(copy_isLocked)
+	if(copy_u8PageNumber == 0)
 	{
-		lcd_vidGotoRowColumn(2,0);	
-		lcd_vidDisplyStr((u8*)"1- Unlock ");
-		lcd_vidGotoRowColumn(3,0);	
-		lcd_vidDisplyStr((u8*)"2- Change Password ");
-	}
-	else
-	{
-		// Unlocked
-		lcd_vidGotoRowColumn(2,0);	
-		lcd_vidDisplyStr((u8*)"1- Lock ");		
+		lcd_vidGotoRowColumn(1,3);	
+		lcd_vidDisplyStr((u8*)"Select One of: ");
+		if(copy_isLocked)
+		{
+			lcd_vidGotoRowColumn(2,0);	
+			lcd_vidDisplyStr((u8*)"1- Unlock ");
+		}
+		else
+		{
+			// Unlocked
+			lcd_vidGotoRowColumn(2,0);	
+			lcd_vidDisplyStr((u8*)"1- Lock ");		
+		}
 		lcd_vidGotoRowColumn(3,0);	
 		lcd_vidDisplyStr((u8*)"2- Change Password ");	
+		lcd_vidGotoRowColumn(3,19);	
+		lcd_vidDisplyChar(2); // Down Button
+			
 	}
+	else if (copy_u8PageNumber == 1)
+	{
+		if(copy_isLocked)
+		{
+			lcd_vidGotoRowColumn(1,0);	
+			lcd_vidDisplyStr((u8*)"1- Unlock ");
+		}
+		else
+		{
+			// Unlocked
+			lcd_vidGotoRowColumn(1,0);	
+			lcd_vidDisplyStr((u8*)"1- Lock ");		
+		}
+		lcd_vidGotoRowColumn(2,0);	
+		lcd_vidDisplyStr((u8*)"2- Change Password ");	
+		lcd_vidGotoRowColumn(2,19);	
+		lcd_vidGotoRowColumn(3,0);	
+		lcd_vidDisplyStr((u8*)"3- Factory Reset ");	
+		lcd_vidGotoRowColumn(3,19);	
+		
+		lcd_vidDisplyChar(3); // Up Button		
+	}
+	
 }
 static APP_ErrorHandling_t APP_u8SetPassword(void)
 {
@@ -357,12 +387,12 @@ void PasswordLock_voidInit(void)
 	// Enable Interrupts 
 	sei();
 	/**************************************** Check Operation Times ******************/ 
-	//APP_resetEEPROM();
+	//APP_FactoryReset();
 	while(Global_ErrorHandling != E_OK )
 	{
 		Global_ErrorHandling = APP_HandleFirstTime();
 	}
-	APP_voidDisplayMainScreen(Global_u8SystemIsLocked);	
+	APP_voidDisplayMainScreen(Global_u8SystemIsLocked,0);	
 	/**************************************** Test Mode *****************************/
 	#if TEST_MODE == 1 
 	LCD_voidTest();
@@ -388,7 +418,7 @@ void PasswordLock_voidStart(void)
 	if(Global_u8SystemIsLocked != Loc_u8SystemPrevState)
 	{
 		// Password Buffer is Ready 
-		APP_voidDisplayMainScreen(Global_u8SystemIsLocked);	
+		APP_voidDisplayMainScreen(Global_u8SystemIsLocked,0);	
 		Loc_u8SystemPrevState = Global_u8SystemIsLocked ;	
 	}
 	// Check Pressed Key 
@@ -411,7 +441,7 @@ void PasswordLock_voidStart(void)
 				lcd_vidClrDislay(); 
 				lcd_vidDisplyStr((u8*)"Wrong Password"); 
 				_delay_ms(1000);
-				APP_voidDisplayMainScreen(Global_u8SystemIsLocked);	
+				APP_voidDisplayMainScreen(Global_u8SystemIsLocked,0);	
 			}
 		}
 		else
@@ -435,14 +465,41 @@ void PasswordLock_voidStart(void)
 			lcd_vidDisplyStr((u8*)"Wrong Password"); 
 			_delay_ms(1000);
 		}
-		APP_voidDisplayMainScreen(Global_u8SystemIsLocked);	
+		APP_voidDisplayMainScreen(Global_u8SystemIsLocked,0);	
+	}
+	else if (LOC_u8PressedKey == UP_BTN)
+	{
+		APP_voidDisplayMainScreen(Global_u8SystemIsLocked,0);	
+	}
+	else if(LOC_u8PressedKey == DOWN_BTN)
+	{
+		APP_voidDisplayMainScreen(Global_u8SystemIsLocked,1);
+	}
+	else if (LOC_u8PressedKey == '3')
+	{
+		APP_voidGetPassword(LOC_u8PasswordBuffer); 
+		LOC_u8Result = APP_u8PasswordAuthentication(LOC_u8PasswordBuffer); 
+		if(LOC_u8Result == 1)
+		{
+			APP_FactoryReset(); 
+		}
+		else
+		{
+			lcd_vidClrDislay(); 
+			lcd_vidDisplyStr((u8*)"Wrong Password"); 
+			_delay_ms(1000);
+			APP_voidDisplayMainScreen(Global_u8SystemIsLocked,0);	
+
+		}
+
+
 	}
 	else if(LOC_u8PressedKey != 0xFF)
 	{
 		lcd_vidClrDislay(); 
 		lcd_vidDisplyStr((u8*)"Wrong Choice"); 
 		_delay_ms(700);
-		APP_voidDisplayMainScreen(Global_u8SystemIsLocked);	
+		APP_voidDisplayMainScreen(Global_u8SystemIsLocked,0);	
 	}
 	else
 	{
