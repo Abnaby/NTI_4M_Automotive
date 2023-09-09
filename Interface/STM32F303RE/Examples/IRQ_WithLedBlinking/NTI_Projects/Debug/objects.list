@@ -1,0 +1,8 @@
+"Inc/EXTI/extint.o"
+"Inc/GPIO/GPIO_program.o"
+"Inc/NVIC/nvic.o"
+"Inc/RCC/RCC_program.o"
+"Src/main.o"
+"Src/syscalls.o"
+"Src/sysmem.o"
+"Startup/startup_stm32f303retx.o"

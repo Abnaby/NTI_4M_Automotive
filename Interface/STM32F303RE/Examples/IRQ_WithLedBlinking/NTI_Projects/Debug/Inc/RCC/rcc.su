@@ -1,0 +1,3 @@
+rcc.c:5:6:RCC_VidSystemClockInit	4	static
+rcc.c:11:6:RCC_VidEnableClock	16	static
+rcc.c:28:6:RCC_VidDisableClock	16	static
