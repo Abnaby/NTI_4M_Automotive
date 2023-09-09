@@ -1,0 +1,4 @@
+extint.c:13:6:extint_enableLine	16	static
+extint.c:54:6:extint_clearFlag	16	static
+extint.c:68:6:EXTI0_IRQHandler	8	static
+extint.c:76:6:EXTI15_10_IRQHandler	8	static
