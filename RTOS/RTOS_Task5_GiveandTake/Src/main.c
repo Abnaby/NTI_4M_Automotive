@@ -25,6 +25,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "FreeRTOSConfig.h"
+#include "semphr.h"
 
 /*******************************	LEDs		********************************/
 #define GREEN_BUILT_IN_LED		PORTA, PIN5
@@ -35,6 +36,8 @@
 xTaskHandle T1_GreenLedHandle = NULL ;
 xTaskHandle T2_ButtonHandle = NULL ;
 
+/*******************************	Semaphore ***********************************/
+SemaphoreHandle_t pushButtonSemaphore = NULL ;
 /*******************************	Flags	*************************************/
 u8 Glob_u8BtnFlag ;
 
@@ -57,13 +60,22 @@ void T1_voidGreenLed(void * pvParam)
 void T2_voidButtonState(void * pvParam)
 {
 	u8 btnState ;
+
 	while(1)
 	{
 		btnState  = GPIO_u8GetPinValue(INTERNAL_BTN);
-		if(btnState == 0)
+		xSemaphoreGive( pushButtonSemaphore ) ;
+		BaseType_t LOC_u8Error = 	xSemaphoreTake( pushButtonSemaphore, ( TickType_t ) 10 )  ;
+
+		if( LOC_u8Error == pdTRUE )
 		{
-			Glob_u8BtnFlag = 1 ;
+			if(btnState == 0)
+			{
+				Glob_u8BtnFlag = 1 ;
+			}
+            xSemaphoreGive( pushButtonSemaphore );
 		}
+
 		vTaskDelay(50);
 	}
 }
@@ -80,7 +92,9 @@ int main(void)
 	GPIO_voidSetPinDirection(GREEN_BUILT_IN_LED, GPIO_OUTPUT_LOW_SPD_PUSH_PULL);
 	GPIO_voidSetPinDirection(YELLOW_EXTERNAL_LED, GPIO_OUTPUT_LOW_SPD_PUSH_PULL);
 	GPIO_voidSetPinDirection(INTERNAL_BTN, GPIO_DIGITAL_INPUT_FLOAT);
-	
+	/********************************** Semaphores	 **********************************************/
+	pushButtonSemaphore = xSemaphoreCreateBinary();
+
 	/********************************** Start Scheduler ******************************************/
 	vTaskStartScheduler();
 	while(1)
